@@ -1,10 +1,11 @@
 import React from 'react';
+import './Keyboard.css';
 
 const Keyboard = ({ handleGuess }) => {
   return (
-    <div>
+    <div className="keyboard-container">
       {Array.from('ABCDEFGHIJKLMNOPQRSTUVWXYZ').map((letter) => (
-        <button key={letter} onClick={() => handleGuess(letter)}>
+        <button key={letter} className="keyboard-button" onClick={() => handleGuess(letter)}>
           {letter}
         </button>
       ))}

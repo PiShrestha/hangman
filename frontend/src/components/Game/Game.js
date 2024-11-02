@@ -108,7 +108,7 @@ const Game = ({ phrase }) => {
   return (
     <div className="game-container">
       <h2>Guess the Phrase!</h2>
-      <img src={getImageUrl('hangman/initial.png')} alt="Initial Hangman Image" className="styles.image" />
+      <img src={getImageUrl('hangman/initial.png')} alt="Initial Hangman Image" className="image" />
       <p>Your Currency: {currency}</p>
       <p>Remaining Attempts: {remainingAttempts}</p>
       <PhraseDisplay phrase={phrase} guessedLetters={guessedLetters} />
