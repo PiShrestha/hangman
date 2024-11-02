@@ -12,7 +12,6 @@ const Hangman = () => {
       .then(response => {
         console.log('Data fetched:', response.data);
         setPhrases(response.data);
-        // Select a random phrase for the game
         const randomPhrase = response.data[Math.floor(Math.random() * response.data.length)];
         setSelectedPhrase(randomPhrase);
       })

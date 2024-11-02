@@ -1,6 +1,6 @@
 import React from 'react';
 import Hangman from './components/Hangman/Hangman';
-import './App.css'; // Ensure this line is present in App.js
+import './App.css'; 
 
 const App = () => {
   return (

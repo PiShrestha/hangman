@@ -3,6 +3,7 @@ import PhraseDisplay from '../PhraseDisplay/PhraseDisplay';
 import Keyboard from '../Keyboard/Keyboard';
 import Controls from '../Controls/Controls';
 import MiniGame from '../MiniGame/MiniGame';
+import { getImageUrl } from '../../utils';
 import './Game.css';
 
 const Game = ({ phrase }) => {
@@ -107,6 +108,7 @@ const Game = ({ phrase }) => {
   return (
     <div className="game-container">
       <h2>Guess the Phrase!</h2>
+      <img src={getImageUrl('hangman/initial.png')} alt="Initial Hangman Image" className="styles.image" />
       <p>Your Currency: {currency}</p>
       <p>Remaining Attempts: {remainingAttempts}</p>
       <PhraseDisplay phrase={phrase} guessedLetters={guessedLetters} />
