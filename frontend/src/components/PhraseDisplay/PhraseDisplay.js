@@ -6,10 +6,10 @@ const PhraseDisplay = ({ phrase, guessedLetters }) => {
         <div className="phrase-display">
             {phrase.split('').map((char, index) => {
                 if (char === ' ') {
-                    return <span key={index}> </span>; // Replace space with an underscore
+                    return <span key={index} className="space"> </span>; // Added class for space
                 }
                 return (
-                    <span key={index}>
+                    <span key={index} className={guessedLetters.includes(char.toLowerCase()) ? 'revealed' : 'hidden'}>
                         {guessedLetters.includes(char.toLowerCase()) ? char : '_'}
                     </span>
                 );

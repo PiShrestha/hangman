@@ -4,13 +4,12 @@
   justify-content: center;
   align-items: center;
   margin: 20px;
-  width: 50%;
 }
 
 .keyboard-button {
   background-color: #13989a; /* Green background */
   color: white; /* White text */
-  border: none; /* No border */
+  border: none; 
   padding: 10px 15px; /* Padding for button */
   margin: 5px; /* Space between buttons */
   border-radius: 5px; /* Rounded corners */
