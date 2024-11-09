@@ -8,7 +8,7 @@ import './Game.css';
 
 const Game = ({ phrase, onRestartGame }) => {
   const [guessedLetters, setGuessedLetters] = useState([]);
-  const [remainingAttempts, setRemainingAttempts] = useState(6);
+  const [remainingAttempts, setRemainingAttempts] = useState(7);
   const [isGameOver, setIsGameOver] = useState(false);
   const [hasWon, setHasWon] = useState(false);
   const [currency, setCurrency] = useState(100);
@@ -33,7 +33,7 @@ const Game = ({ phrase, onRestartGame }) => {
 
   const resetGame = () => {
     setGuessedLetters([]);
-    setRemainingAttempts(6);
+    setRemainingAttempts(7);
     setIsGameOver(false);
     setHasWon(false);
     setCurrency(100);
@@ -55,6 +55,14 @@ const Game = ({ phrase, onRestartGame }) => {
       setHasWon(false);
     }
   };
+
+  const getHangmanImage = () => {
+    if(remainingAttempts <= 0){
+      return getImageUrl(`hangman/hangman7.png`);;
+    }else{
+      return getImageUrl(`hangman/hangman${8 - remainingAttempts}.png`);  
+    }
+  }
 
   const useHint = () => {
     if (currency >= 20) {
@@ -101,11 +109,17 @@ const Game = ({ phrase, onRestartGame }) => {
     <div className="container">
       <h2>Guess the Phrase!</h2>
       <div className="game-layout">
-        <img src={getImageUrl('hangman/initial.png')} alt="Initial Hangman Image" className="image" />
+          {remainingAttempts === 7 ? (
+            <img src={getImageUrl('hangman/initial.png')} alt="Initial Hangman Image" className="image" />
+              ) : (
+            <img src={getHangmanImage()} alt="Hangman" className="image" />
+          )}
         <div className="right-section">
           <PhraseDisplay phrase={phrase} guessedLetters={guessedLetters} />
           <Keyboard handleGuess={handleGuess} />
-          <p>Your Currency: {currency}</p>
+          <div className="coinContainer">
+          <img src={getImageUrl('coin.png')} alt="Currency Icon" className="coinImg" />: {currency}
+          </div>
           <p>Remaining Attempts: {remainingAttempts}</p>
         </div>
       </div>

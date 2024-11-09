@@ -26,6 +26,15 @@
   padding: 10px;
 }
 
+.coinContainer{
+  display: flex;
+  align-items: center; 
+}
+
+.coinImg{
+  width: 30px;
+}
+
 .right-section {
   flex: 1;
   display: flex;

@@ -46,7 +46,8 @@ const Hangman = () => {
       </div>
       {selectedPhrase && selectedPhrase.quote && (
         <div>
-          <p><strong>Quote Author:</strong> <em>- {selectedPhrase.author || "Unknown"}</em></p>
+          <p>You have selected <strong>{selectedTag}</strong> </p>
+          <p><strong>Quote Author:</strong> <em>{selectedPhrase.author || "Unknown"}</em></p>
           <Game phrase={selectedPhrase.quote} onRestartGame={restartGame} />
         </div>
       )}
