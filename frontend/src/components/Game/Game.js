@@ -116,8 +116,8 @@ const Game = ({ phrase, onRestartGame }) => {
           )}
         <div className="right-section">
           <PhraseDisplay phrase={phrase} guessedLetters={guessedLetters} />
-          <Keyboard handleGuess={handleGuess} />
-          <div className="coinContainer">
+          <Keyboard handleGuess={handleGuess} guessedLetters={guessedLetters} phrase={phrase} />
+        <div className="coinContainer">
           <img src={getImageUrl('coin.png')} alt="Currency Icon" className="coinImg" />: {currency}
           </div>
           <p>Remaining Attempts: {remainingAttempts}</p>

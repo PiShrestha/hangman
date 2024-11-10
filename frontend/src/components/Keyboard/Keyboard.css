@@ -3,21 +3,64 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  gap: 10px;
+  padding: 20px;
 }
 
 .keyboard-button {
-  background-color: #13989a; /* Green background */
-  color: white; /* White text */
-  border: none; 
-  padding: 10px 15px; /* Padding for button */
-  margin: 5px; /* Space between buttons */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  font-size: 16px; /* Font size */
-  transition: background-color 0.3s; /* Smooth transition */
+  width: 50px;
+  height: 50px;
+  background-color: #13989a;
+  color: #ffffff;
+  border: 2px solid transparent;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s, transform 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .keyboard-button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #128183; 
+  border-color: #ffffff;
+}
+
+.correct {
+  background-color: #2ecc71; /* Green for correct */
+  color: #ffffff;
+}
+
+.incorrect {
+  background-color: #e74c3c; /* Red for incorrect */
+  color: #ffffff;
+}
+
+.keyboard-button:disabled {
+  background-color: #bdc3c7;
+  color: #ffffff;
+  cursor: not-allowed;
+  border-color: #95a5a6;
+}
+
+/* Prevent hover effects on .correct and .incorrect buttons */
+.keyboard-button.correct:hover,
+.keyboard-button.incorrect:hover {
+  background-color: inherit; 
+  border-color: inherit;    
+  cursor: default;           
+}
+
+/* Active state feedback */
+.keyboard-button:active {
+  transform: scale(0.95);
+}
+
+.keyboard-button.correct,
+.keyboard-button.incorrect {
+  pointer-events: none; /* Prevents any interaction */
 }

@@ -6,7 +6,7 @@ const PhraseDisplay = ({ phrase, guessedLetters }) => {
         <div className="phrase-display">
             {phrase.split('').map((char, index) => {
                 if (char === ' ') {
-                    return <span key={index} className="space"> </span>; // Added class for space
+                    return <span key={index} className="space"> </span>;
                 }
                 return (
                     <span key={index} className={guessedLetters.includes(char.toLowerCase()) ? 'revealed' : 'hidden'}>

@@ -1,35 +1,39 @@
-/* PhraseDisplay.css */
-
 .phrase-display {
     width: 100%;
     max-width: 600px;
     margin: 20px auto;
     font-size: 28px;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background-color: #f9f9f9; /* Light background for better contrast */
+    background-color: #f9f9f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .space {
-    width: 15px; /* Adjust width for spaces between words */
+    width: 15px; 
+}
+
+.revealed, .hidden {
+    display: inline-block;
+    width: 20px; 
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px; 
 }
 
 .revealed {
-    color: #2ecc71; /* Soft green color for revealed letters */
-    font-weight: 600;
+    color: #2ecc71; 
 }
 
 .hidden {
-    color: #bdc3c7; /* Light gray for hidden letters */
+    color: #bdc3c7;
 }
 
-/* Additional styling for a smoother look */
 .phrase-display span {
-    transition: color 0.3s ease, font-weight 0.3s ease; /* Smooth transitions */
+    transition: color 0.3s ease, font-weight 0.3s ease; 
 }
